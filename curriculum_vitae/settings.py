@@ -41,7 +41,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-PROJECT_APPS = ["apps.core", "apps.curriculum"]
+PROJECT_APPS = ["apps.users", "apps.core", "apps.curriculum"]
 
 THIRD_APPS = [
     "drf_yasg",
@@ -136,3 +136,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "users.User"
+APPEND_SLASH = False
