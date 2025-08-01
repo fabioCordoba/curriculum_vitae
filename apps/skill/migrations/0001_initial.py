@@ -2,7 +2,6 @@
 
 import django.db.models.deletion
 import uuid
-from django.conf import settings
 from django.db import migrations, models
 
 
@@ -11,27 +10,23 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('curriculum', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Curriculum',
+            name='Skill',
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
                 ('is_active', models.BooleanField(default=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True, db_index=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=100)),
-                ('profession', models.CharField(max_length=100)),
-                ('position', models.CharField(max_length=100)),
-                ('profile', models.TextField(blank=True)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='user_cv', to=settings.AUTH_USER_MODEL, verbose_name='user')),
+                ('name', models.CharField(blank=True, max_length=100, null=True)),
+                ('type', models.CharField(blank=True, choices=[('Lenguajes de Programación', 'Programming Languages'), ('Framework', 'Framework'), ('Bases de Datos', 'Databases'), ('Herramientas', 'Tools'), ('Otros', 'Others')], default='Lenguajes de Programación', max_length=50, null=True)),
+                ('curriculum', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='skills', to='curriculum.curriculum')),
             ],
             options={
-                'verbose_name': 'Curriculum',
-                'verbose_name_plural': 'Curriculums',
-                'ordering': ('created_at',),
+                'abstract': False,
             },
         ),
     ]

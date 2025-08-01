@@ -41,7 +41,13 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-PROJECT_APPS = ["apps.users", "apps.core", "apps.curriculum", "apps.contact"]
+PROJECT_APPS = [
+    "apps.users",
+    "apps.core",
+    "apps.curriculum",
+    "apps.contact",
+    "apps.skill",
+]
 
 THIRD_APPS = [
     "drf_yasg",
