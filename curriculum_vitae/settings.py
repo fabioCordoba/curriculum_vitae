@@ -41,12 +41,13 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-PROJECT_APPS = ["apps.users", "apps.core", "apps.curriculum"]
+PROJECT_APPS = ["apps.users", "apps.core", "apps.curriculum", "apps.contact"]
 
 THIRD_APPS = [
     "drf_yasg",
     "rest_framework",
     "rest_framework_simplejwt",
+    "phonenumber_field",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + PROJECT_APPS
