@@ -26,7 +26,21 @@ SECRET_KEY = "django-insecure-85sx6bys_sib#byo9$ajrj(@xu!=8yne1*v@!k%t)c!y6l6$ru
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "fabiocordoba.me",
+    "www.fabiocordoba.me",
+    "backendcv.fabiocordoba.me",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://backendcv.fabiocordoba.me",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://backendcv.fabiocordoba.me",
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition
@@ -62,6 +76,8 @@ THIRD_APPS = [
 INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -141,6 +157,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = "./static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

@@ -13,5 +13,5 @@ class User(BaseModel, AbstractUser):
     email = models.EmailField(unique=True)
     rol = models.CharField(max_length=13, choices=ROLES)
 
-    USERNAME_FIELD = "email"
+    # USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
