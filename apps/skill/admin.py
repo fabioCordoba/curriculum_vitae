@@ -5,4 +5,4 @@ from apps.skill.models.skill import Skill
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["name"]

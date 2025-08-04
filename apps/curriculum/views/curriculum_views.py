@@ -4,7 +4,7 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
 
 from apps.curriculum.models.curriculum import Curriculum
-from apps.curriculum.serilaizers.curriculum_serializers import CurriculumSerializer
+from apps.curriculum.serializers.curriculum_serializers import CurriculumSerializer
 
 
 class CurriculumViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):

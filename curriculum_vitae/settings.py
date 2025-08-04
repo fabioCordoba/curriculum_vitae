@@ -47,6 +47,9 @@ PROJECT_APPS = [
     "apps.curriculum",
     "apps.contact",
     "apps.skill",
+    "apps.education",
+    "apps.work_experience",
+    "apps.portfolio",
 ]
 
 THIRD_APPS = [
