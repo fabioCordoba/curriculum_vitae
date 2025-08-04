@@ -42,13 +42,21 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
+    "apps.users",
     "apps.core",
+    "apps.curriculum",
+    "apps.contact",
+    "apps.skill",
+    "apps.education",
+    "apps.work_experience",
+    "apps.portfolio",
 ]
 
 THIRD_APPS = [
     "drf_yasg",
     "rest_framework",
     "rest_framework_simplejwt",
+    "phonenumber_field",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + PROJECT_APPS
@@ -138,3 +146,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "users.User"
+APPEND_SLASH = False
