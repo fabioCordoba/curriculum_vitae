@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,8 @@ SECRET_KEY = "django-insecure-85sx6bys_sib#byo9$ajrj(@xu!=8yne1*v@!k%t)c!y6l6$ru
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
     "fabiocordoba.me",
     "www.fabiocordoba.me",
     "backendcv.fabiocordoba.me",
@@ -34,6 +37,7 @@ ALLOWED_HOSTS = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://backendcv.fabiocordoba.me",
+    "https://fabiocordoba.me",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -166,3 +170,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.User"
 APPEND_SLASH = False
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

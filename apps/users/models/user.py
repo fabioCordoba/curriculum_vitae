@@ -12,6 +12,11 @@ class User(BaseModel, AbstractUser):
 
     email = models.EmailField(unique=True)
     rol = models.CharField(max_length=13, choices=ROLES)
+    image = models.ImageField(
+        upload_to="user/",  # 📂 se guarda en MEDIA_ROOT/portfolio/
+        null=True,
+        blank=True,
+    )
 
     # USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

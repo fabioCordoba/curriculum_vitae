@@ -16,6 +16,11 @@ class Contact(BaseModel):
     linkendin = models.CharField(max_length=100, null=True, blank=True)
     github = models.CharField(max_length=100, null=True, blank=True)
     instagram = models.CharField(max_length=100, null=True, blank=True)
+    image = models.ImageField(
+        upload_to="user/",
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = "Contact"

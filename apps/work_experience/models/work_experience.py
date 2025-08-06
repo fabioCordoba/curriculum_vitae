@@ -18,6 +18,9 @@ class WorkExperience(BaseModel):
     description = models.TextField(blank=True)
     is_current = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ["-created_at"]
+
     def clean(self):
         if self.end_year and self.end_year < self.start_year:
             raise ValidationError(

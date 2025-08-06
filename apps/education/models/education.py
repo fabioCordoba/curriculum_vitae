@@ -18,3 +18,6 @@ class Education(BaseModel):
     status = models.CharField(
         max_length=20, choices=StatusChoices.choices, default=StatusChoices.IN_PROGRESS
     )
+
+    class Meta:
+        ordering = ["-created_at"]

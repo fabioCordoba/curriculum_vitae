@@ -29,6 +29,8 @@ services:
       DATABASE_NAME: curriculum_vitae-db
       DATABASE_USER: db_user
       DATABASE_PASSWORD: db_password
+    volumes:
+      - mediacv:/code/media 
     networks:
       - alt-network
 networks:
@@ -37,3 +39,4 @@ networks:
 
 volumes:
   dbdatacv:
+  mediacv:
